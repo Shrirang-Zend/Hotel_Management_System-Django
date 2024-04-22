@@ -1,0 +1,72 @@
+/* Navbar */
+nav#navbar {
+  display: grid;
+  width: 100vw;
+  grid-template-columns: 10fr 10fr 3fr;
+  grid-template-areas: "logo ul ham";
+}
+
+.brand {
+  grid-area: logo;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+#logo {
+  font-family: Charm;
+  font-size: 2rem; /* Increase font size */
+  color: #333;
+  margin: 0; /* Remove any default margin */
+}
+
+
+@keyframes nav-item-appear {
+  0% {
+    opacity: 50%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+li {
+  margin: 0.5rem;
+  list-style-type: none;
+  font-size: 0.63rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: 1s ease-in-out 1s 1 nav-item-appear;
+}
+
+/* END Navbar */
+
+@media only screen and (min-width: 600px) {
+  nav#navbar {
+    grid-template-columns: 10fr 3fr;
+    grid-template-areas: "logo ul";
+  }
+}
+
+.open-nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#navlist-div {
+  display: flex;
+  grid-area: ul;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+#navlist-div ul {
+  animation: 1s ease-in-out 1s 1 nav-item-appear;
+  display: flex;
+  flex-direction: row;
+}
